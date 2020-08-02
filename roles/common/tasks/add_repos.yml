@@ -1,0 +1,9 @@
+---
+- name: ADD REPOSITORIES  
+  yum_repository:
+    name: "{{ item.name }}"
+    description: "{{ item.description }}"
+    baseurl: "{{ item.baseurl }}"
+    gpgcheck: "{{ item.gpgcheck }}"
+    gpgkey: "{{ item.gpgkey }} "
+  with_items: "{{ ansible_repos }}"

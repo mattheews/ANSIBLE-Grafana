@@ -1,0 +1,7 @@
+---
+- hosts: telegraf-agents
+  gather_facts: yes
+  become: yes
+
+  roles:
+    - ../roles/telegraf

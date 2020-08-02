@@ -1,0 +1,16 @@
+[grafana-host]
+192.168.2.2
+
+[influxdb-host]
+192.168.2.3
+
+[telegraf-agents]
+192.168.2.4
+192.168.2.5
+192.168.2.6
+192.168.2.7
+
+[all:vars]
+ansible_user= vagrant
+ansible_ssh_private_key_file= "~/.vagrant.d/insecure_private_key"
+ansible_ssh_common_args= '-o StrictHostKeyChecking=no'

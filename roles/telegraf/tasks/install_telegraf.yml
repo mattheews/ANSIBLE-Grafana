@@ -1,0 +1,8 @@
+---
+- name: Install Telegraf
+  yum:
+    name: telegraf
+    state: present
+  notify:
+    - enable_telegraf
+    - start_telegraf

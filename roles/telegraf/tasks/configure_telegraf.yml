@@ -1,0 +1,25 @@
+---
+- name: Copy telegraf.conf into agents
+  template:
+    src: telegraf.conf.j2
+    dest: "/etc/telegraf/telegraf.conf"
+  register: copy
+
+- name: Ensure telegraf logfile is available
+  stat:
+    path: "{{ telegraf_logfile }}"
+  register: stat_telegraf_logfile
+
+- name: Ensure telegraf logfile is available
+  file: 
+    path: "{{ telegraf_logfile }}"
+    state: touch
+    owner: telegraf
+    group: telegraf
+    mode: '644'
+  when: not stat_telegraf_logfile.stat.exists
+
+- name: debug
+  debug:
+    msg: "{{ stat_telegraf_logfile }}"
+  
