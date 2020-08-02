@@ -1,0 +1,10 @@
+---
+- include_tasks: install_telegraf.yml
+
+- include_tasks: configure_telegraf.yml
+  vars:
+    telegraf_logfile: "/var/log/telegraf.log"
+
+- include_tasks: manage_telegraf_service.yml
+  vars:
+    state: "restarted"

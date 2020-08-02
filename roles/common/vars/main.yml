@@ -1,0 +1,4 @@
+---
+ansible_repos:
+  - { name: epel, description: "EPEL repository", baseurl: "https://download.fedoraproject.org/pub/epel/$releasever/$basearch/", gpgcheck: "no", gpgkey: "" } 
+  - { name: influxdb, description: "InfluxDB repository", baseurl: "https://repos.influxdata.com/rhel/7/x86_64/stable/", gpgcheck: "yes", gpgkey: "https://repos.influxdata.com/influxdb.key"}
