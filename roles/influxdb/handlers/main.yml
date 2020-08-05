@@ -1,0 +1,15 @@
+---
+- name: restart_influxdb
+  service:
+    name: influxdb
+    state: restarted
+
+- name: enable_influxdb
+  service:
+    name: influxdb
+    enabled: yes
+
+- name: start_influxdb
+  service:
+    name: influxdb
+    state: started

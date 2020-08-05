@@ -1,0 +1,17 @@
+---
+- name: Add {{ telegraf_user.user_name }} user to InfluxDB
+  influxdb_user:
+    user_name: "{{ telegraf_user.user_name }}"
+    user_password: "{{ telegraf_user.user_password }}"
+    grants:
+      - database: "telegraf"
+        privilege: "WRITE"
+
+- name: Add {{ grafana_user.user_name }} user to InfluxDB
+  influxdb_user:
+    user_name: "{{ grafana_user.user_name }}"
+    user_password: "{{ grafana_user.user_password }}"
+    grants:
+      - database: "telegraf"
+        privilege: "WRITE"
+  

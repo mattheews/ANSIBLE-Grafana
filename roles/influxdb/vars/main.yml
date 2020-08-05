@@ -1,0 +1,11 @@
+---
+firewall_add_ports:
+  - { protocol: tcp, port: 8086 }
+
+telegraf_user:
+  user_name: "telegraf"
+  user_password: "zaq1@WSX"
+
+grafana_user:
+  user_name: "grafana"
+  user_password: "zaq1@WSX"

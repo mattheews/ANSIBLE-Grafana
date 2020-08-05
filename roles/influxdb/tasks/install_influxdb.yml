@@ -1,0 +1,8 @@
+---
+- name: Install InfluxDB
+  yum:
+    name: influxdb
+    state: present
+  notify:
+    - enable_influxdb
+    - start_influxdb

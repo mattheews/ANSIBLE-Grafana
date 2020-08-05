@@ -1,0 +1,11 @@
+---
+- name: Add tcp/8086 - zmienna port for InfluxDB
+  iptables:
+    chain: INPUT
+    protocol: "{{ item.protocol }}"
+    destination_port: "{{ item.port }}"
+    jump: ACCEPT
+    action: insert
+  with_items: "{{ firewall_add_ports }}"
+  notify:
+    - restart_influxdb
