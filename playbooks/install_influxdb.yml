@@ -1,0 +1,7 @@
+---
+- hosts: influxdb-host
+  gather_facts: no
+  become: yes
+
+  roles:
+    - ../roles/influxdb
