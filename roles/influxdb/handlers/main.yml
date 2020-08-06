@@ -13,3 +13,13 @@
   service:
     name: influxdb
     state: started
+
+- name: enable_chronograf
+  service:
+    name: chronograf
+    enabled: yes
+
+- name: start_chronograf
+  service:
+    name: chronograf
+    state: started

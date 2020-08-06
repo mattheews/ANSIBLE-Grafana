@@ -6,3 +6,11 @@
   notify:
     - enable_influxdb
     - start_influxdb
+
+- name: Install chronograf
+  yum:
+    name: chronograf
+    state: present
+  notify:
+    - enable_chronograf
+    - start_chronograf

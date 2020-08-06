@@ -1,17 +1,14 @@
 ---
 - name: Add {{ telegraf_user.user_name }} user to InfluxDB
-  influxdb_user:
-    user_name: "{{ telegraf_user.user_name }}"
-    user_password: "{{ telegraf_user.user_password }}"
-    grants:
-      - database: "telegraf"
-        privilege: "WRITE"
+  uri:
+    url: "http://localhost:8086/query"
+    method: POST
+    body_format: form-urlencoded
+    body: "q=CREATE USER {{ telegraf_user.user_name }} WITH PASSWORD '{{ telegraf_user.user_password }}' WITH ALL PRIVILEGES"
 
 - name: Add {{ grafana_user.user_name }} user to InfluxDB
-  influxdb_user:
-    user_name: "{{ grafana_user.user_name }}"
-    user_password: "{{ grafana_user.user_password }}"
-    grants:
-      - database: "telegraf"
-        privilege: "WRITE"
-  
+  uri:
+    url: "http://localhost:8086/query"
+    method: POST
+    body_format: form-urlencoded
+    body: "q=CREATE USER {{ grafana_user.user_name }} WITH PASSWORD '{{ grafana_user.user_password }}' WITH ALL PRIVILEGES"
