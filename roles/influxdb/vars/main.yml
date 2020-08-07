@@ -1,6 +1,7 @@
 ---
 firewall_add_ports:
-  - { protocol: tcp, port: 8086 }
+  - { port: 8888/tcp }
+  - { port: 8086/tcp }
 
 telegraf_user:
   user_name: "telegraf"

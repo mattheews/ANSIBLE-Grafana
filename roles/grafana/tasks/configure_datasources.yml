@@ -1,0 +1,12 @@
+---
+
+- name: Add InfluxDB Data Source to Grafana
+  grafana_datasource:
+    name: "{{ item.name }}"
+    grafana_url: "{{ grafana_access.grafana_url }}"
+    grafana_user: "{{ grafana_access.user }}"
+    grafana_password: "{{ grafana_access.password }}"
+    ds_type: "{{ item.ds_type }}"
+    ds_url: "{{ item.ds_url }}"
+    database: "{{ item.database }}"
+  with_items: "{{ grafana_datasources }}"

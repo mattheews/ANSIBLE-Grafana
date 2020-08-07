@@ -1,5 +1,5 @@
 ---
-- name: ADD REPOSITORIES  
+- name: ADD COMMON REPOSITORIES  
   yum_repository:
     name: "{{ item.name }}"
     description: "{{ item.description }}"
@@ -7,3 +7,12 @@
     gpgcheck: "{{ item.gpgcheck }}"
     gpgkey: "{{ item.gpgkey }} "
   with_items: "{{ ansible_repos }}"
+
+- name: ADD GRAFANA REPOSITORY
+  yum_repository:
+    name: "{{ grafana_repo.name }}"
+    description: "{{ grafana_repo.description }}"
+    baseurl: "{{ grafana_repo.baseurl }}"
+    gpgcheck: "{{ grafana_repo.gpgcheck }}"
+    gpgkey: "{{ grafana_repo.gpgkey }} "
+  when: inventory_hostname in groups['grafana-host']

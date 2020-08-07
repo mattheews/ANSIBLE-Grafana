@@ -1,2 +1,15 @@
 ---
-# handlers file for grafana
+- name: restart_grafana
+  service:
+    name: grafana-server
+    state: restarted
+
+- name: enable_grafana
+  service:
+    name: grafana-server
+    enabled: yes
+
+- name: start_grafana
+  service:
+    name: grafana-server
+    state: started

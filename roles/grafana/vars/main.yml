@@ -1,2 +1,11 @@
 ---
-# vars file for grafana
+firewall_add_ports:
+  - { protocol: tcp, port: 3000 }
+
+grafana_datasources:
+  - { name: "InfluxDB", ds_type: "influxdb", ds_url: "http://192.168.2.3:8086/", database: "telegraf", time_interval: ">10s" }
+
+grafana_access:
+  grafana_url: "http://192.168.2.2:3000"
+  user: admin
+  password: zaq1@WSX

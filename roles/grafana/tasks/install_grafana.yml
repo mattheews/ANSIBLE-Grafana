@@ -1,0 +1,8 @@
+---
+- name: Install Grafana
+  yum:
+    name: grafana
+    state: present
+  notify:
+    - enable_grafana
+    - start_grafana

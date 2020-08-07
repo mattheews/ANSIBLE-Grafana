@@ -1,2 +1,6 @@
 ---
-# tasks file for grafana
+- include_tasks: firewall.yml
+
+- include_tasks: install_grafana.yml
+
+- include_tasks: configure_datasources.yml

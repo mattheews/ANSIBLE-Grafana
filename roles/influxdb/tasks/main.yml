@@ -1,6 +1,6 @@
 ---
-- include_tasks: install_influxdb.yml
-
 - include_tasks: firewall.yml
+
+- include_tasks: install_influxdb.yml
 
 - include_tasks: manage_ifluxdb_users.yml
