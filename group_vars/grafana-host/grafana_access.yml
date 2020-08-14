@@ -1,0 +1,5 @@
+---
+grafana_access:
+  grafana_url: "http://192.168.2.2:3000"
+  user: admin
+  password: zaq1@WSX

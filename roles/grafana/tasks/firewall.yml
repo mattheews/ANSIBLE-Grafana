@@ -13,6 +13,16 @@
     state: enabled
   with_items: "{{ firewall_add_ports }}"
 
+- name: Remove firewall ports for InfluxDB
+  firewalld:
+    zone: public
+    port: "{{ item.port }}"
+    permanent: yes
+    state: disabled
+  with_items: "{{ firewall_remove_ports }}"
+  when:
+    - firewall_remove_ports is defined
+
 - name: reload service firewalld
   systemd:
     name: firewalld

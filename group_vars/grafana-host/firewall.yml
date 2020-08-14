@@ -1,0 +1,7 @@
+---
+firewall_add_ports:
+  - { port: 3000/tcp }
+  - { port: 80/tcp }
+  
+#firewall_remove_ports:
+#  - { port: }
