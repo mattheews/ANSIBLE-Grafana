@@ -1,9 +1,19 @@
 ---
-- name: Add tcp/3000 - zmienna port for InfluxDB
-  iptables:
-    chain: INPUT
-    protocol: "{{ item.protocol }}"
-    destination_port: "{{ item.port }}"
-    jump: ACCEPT
-    action: insert
+- name: Start & enable firewalld
+  service:
+    name: firewalld
+    state: started
+    enabled: yes
+
+- name: Add firewall ports for InfluxDB
+  firewalld:
+    zone: public
+    port: "{{ item.port }}"
+    permanent: yes
+    state: enabled
   with_items: "{{ firewall_add_ports }}"
+
+- name: reload service firewalld
+  systemd:
+    name: firewalld
+    state: reloaded

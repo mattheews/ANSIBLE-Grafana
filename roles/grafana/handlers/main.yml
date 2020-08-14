@@ -13,3 +13,8 @@
   service:
     name: grafana-server
     state: started
+
+- name: reload_firewalld
+  service:
+    name: firewalld
+    state: reloaded

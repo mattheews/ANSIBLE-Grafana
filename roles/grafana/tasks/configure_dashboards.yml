@@ -1,0 +1,8 @@
+---
+
+- name: Import Grafana dashboard 1234
+  grafana_dashboard:
+    grafana_url: "http://192.168.2.3:3000"
+    state: present
+    overwrite: yes
+    path: "roles/grafana/templates/1234.json"

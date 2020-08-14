@@ -4,3 +4,5 @@
 - include_tasks: install_grafana.yml
 
 - include_tasks: configure_datasources.yml
+
+- include_tasks: configure_dashboards.yml
