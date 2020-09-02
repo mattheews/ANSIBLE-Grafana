@@ -15,4 +15,4 @@
     baseurl: "{{ grafana_repo.baseurl }}"
     gpgcheck: "{{ grafana_repo.gpgcheck }}"
     gpgkey: "{{ grafana_repo.gpgkey }} "
-  when: inventory_hostname in groups['grafana-host']
+  when: inventory_hostname in groups['grafana_host']

@@ -1,5 +1,5 @@
 ---
-- hosts: grafana-host
+- hosts: grafana_host
   gather_facts: no
   become: yes
 

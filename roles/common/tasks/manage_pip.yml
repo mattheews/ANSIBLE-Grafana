@@ -7,5 +7,7 @@
 - name: Install Python library dependencies
   pip:
     name:
-      - requests
+      - "{{ item }}"
+  with_items: "{{ pip-packages }}"
+  
   

@@ -1,5 +1,5 @@
 ---
-- hosts: influxdb-host
+- hosts: influxdb_host
   gather_facts: no
   become: yes
 

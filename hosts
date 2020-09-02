@@ -1,10 +1,10 @@
-[grafana-host]
+[grafana_host]
 192.168.2.2
 
-[influxdb-host]
+[influxdb_host]
 192.168.2.3
 
-[telegraf-agents]
+[telegraf_agents]
 192.168.2.4
 192.168.2.5
 192.168.2.6
