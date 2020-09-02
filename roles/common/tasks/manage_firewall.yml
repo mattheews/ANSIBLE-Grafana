@@ -1,0 +1,16 @@
+---
+- name: Disable firewalld
+  service:
+    name: firewalld
+    enabled: no
+  when: not enable_firewalld
+  tags:
+    - firewall
+
+- name: Stop firewalld
+  service:
+    name: firewalld
+    state: stopped
+  when: not enable_firewalld
+  tags:
+    - firewall
